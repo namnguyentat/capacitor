@@ -97,7 +97,11 @@ public class PushNotifications extends Plugin {
   @PluginMethod()
   public void requestPermission(PluginCall call) {
     JSObject result = new JSObject();
-    result.put("granted", true);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+      result.put("granted", notificationManager.areNotificationsEnabled());
+    } else {
+      result.put("granted", true);
+    }
     call.success(result);
   }
 
