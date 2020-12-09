@@ -7,7 +7,7 @@ import UIKit
 import WebKit
 import Cordova
 
-public class CAPBridgeViewController: UIViewController, CAPBridgeDelegate, WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate {
+open class CAPBridgeViewController: UIViewController, CAPBridgeDelegate, WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate {
   
   private var webView: WKWebView?
   
