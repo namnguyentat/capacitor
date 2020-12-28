@@ -62,12 +62,6 @@ CAP_PLUGIN(CAPFilesystemPlugin, "Filesystem",
   CAP_PLUGIN_METHOD(copy, CAPPluginReturnPromise);
 )
 
-CAP_PLUGIN(CAPGeolocationPlugin, "Geolocation",
-  CAP_PLUGIN_METHOD(getCurrentPosition, CAPPluginReturnPromise);
-  CAP_PLUGIN_METHOD(watchPosition, CAPPluginReturnCallback);
-  CAP_PLUGIN_METHOD(clearWatch, CAPPluginReturnPromise);
-)
-
 CAP_PLUGIN(CAPHapticsPlugin, "Haptics",
   CAP_PLUGIN_METHOD(impact, CAPPluginReturnNone);
   CAP_PLUGIN_METHOD(notification, CAPPluginReturnNone);

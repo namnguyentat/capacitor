@@ -18,8 +18,6 @@ public class CAPPermissionsPlugin: CAPPlugin {
     switch (name) {
     case "camera":
       return checkCamera(call)
-    case "geolocation":
-      return checkGeolocation(call)
     case "notifications":
       return checkNotifications(call)
     case "clipboard-read", "clipboard-write":
@@ -76,29 +74,6 @@ public class CAPPermissionsPlugin: CAPPlugin {
       return
     }
     
-    call.resolve([
-      "state": ret
-    ])
-  }
-
-  func checkGeolocation(_ call: CAPPluginCall) {
-    let ret: String
-    if CLLocationManager.locationServicesEnabled() {
-        switch CLLocationManager.authorizationStatus() {
-        case .denied, .restricted:
-          ret = "denied"
-        case .authorizedAlways, .authorizedWhenInUse:
-          ret = "granted"
-        case .notDetermined:
-          ret = "prompt"
-        @unknown default:
-          call.reject(CAPPermissionsPlugin.uknownPermissionValue)
-          return
-        }
-    } else {
-      ret = "denied"
-    }
-
     call.resolve([
       "state": ret
     ])
