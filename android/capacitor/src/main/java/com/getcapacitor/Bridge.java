@@ -414,17 +414,17 @@ public class Bridge {
   private void registerAllPlugins() {
     this.registerPlugin(App.class);
     this.registerPlugin(Accessibility.class);
-    this.registerPlugin(BackgroundTask.class);
-    this.registerPlugin(Browser.class);
+    // this.registerPlugin(BackgroundTask.class);
+    // this.registerPlugin(Browser.class);
     this.registerPlugin(Camera.class);
-    this.registerPlugin(Clipboard.class);
+    // this.registerPlugin(Clipboard.class);
     this.registerPlugin(Device.class);
     this.registerPlugin(LocalNotifications.class);
-    this.registerPlugin(Filesystem.class);
-    this.registerPlugin(Geolocation.class);
-    this.registerPlugin(Haptics.class);
+    // this.registerPlugin(Filesystem.class);
+    // this.registerPlugin(Geolocation.class);
+    // this.registerPlugin(Haptics.class);
     this.registerPlugin(Keyboard.class);
-    this.registerPlugin(Modals.class);
+    // this.registerPlugin(Modals.class);
     this.registerPlugin(Network.class);
     this.registerPlugin(Permissions.class);
     this.registerPlugin(Photos.class);
@@ -432,9 +432,9 @@ public class Bridge {
     this.registerPlugin(Share.class);
     this.registerPlugin(SplashScreen.class);
     this.registerPlugin(StatusBar.class);
-    this.registerPlugin(Storage.class);
+    // this.registerPlugin(Storage.class);
     this.registerPlugin(com.getcapacitor.plugin.Toast.class);
-    this.registerPlugin(com.getcapacitor.plugin.WebView.class);
+    // this.registerPlugin(com.getcapacitor.plugin.WebView.class);
 
     for (Class<? extends Plugin> pluginClass : this.initialPlugins) {
       this.registerPlugin(pluginClass);
