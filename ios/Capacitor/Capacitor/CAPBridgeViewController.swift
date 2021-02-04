@@ -489,7 +489,7 @@ open class CAPBridgeViewController: UIViewController, CAPBridgeDelegate, WKScrip
     self.statusBarAnimation = statusBarAnimation
   }
 
-  public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+  open func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
 
     let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
 
@@ -500,7 +500,7 @@ open class CAPBridgeViewController: UIViewController, CAPBridgeDelegate, WKScrip
     self.present(alertController, animated: true, completion: nil)
   }
 
-  public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
+  open func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
 
     let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
 
@@ -515,7 +515,7 @@ open class CAPBridgeViewController: UIViewController, CAPBridgeDelegate, WKScrip
     self.present(alertController, animated: true, completion: nil)
   }
 
-  public func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
+  open func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
     
     let alertController = UIAlertController(title: nil, message: prompt, preferredStyle: .alert)
     
