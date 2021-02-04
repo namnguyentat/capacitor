@@ -156,7 +156,7 @@ public class Camera extends Plugin {
       }, REQUEST_IMAGE_CAPTURE);
       return false;
     }
-    else if(settings.isAllowEditing() && !hasPermission(Manifest.permission.CAMERA) && hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+    else if(settings.isAllowEditing() && !(hasPermission(Manifest.permission.CAMERA) && hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE))) {
       pluginRequestPermissions(new String[] {
         Manifest.permission.CAMERA,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
