@@ -156,6 +156,14 @@ public class Camera extends Plugin {
       }, REQUEST_IMAGE_CAPTURE);
       return false;
     }
+    else if(settings.isAllowEditing() && !hasPermission(Manifest.permission.CAMERA) && hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+      pluginRequestPermissions(new String[] {
+        Manifest.permission.CAMERA,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.READ_EXTERNAL_STORAGE
+      }, REQUEST_IMAGE_CAPTURE);
+      return false;
+    }
     // If we don't need to save to the gallery, we can just ask for camera permissions
     else if(!hasPermission(Manifest.permission.CAMERA)) {
       pluginRequestPermission(Manifest.permission.CAMERA, REQUEST_IMAGE_CAPTURE);
@@ -344,6 +352,8 @@ public class Camera extends Plugin {
         String fileToSavePath = imageEditedFileSavePath != null ? imageEditedFileSavePath : imageFileSavePath;
         File fileToSave = new File(fileToSavePath);
         MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), fileToSavePath, fileToSave.getName(), "");
+      } catch (NullPointerException e) {
+        Logger.error(getLogTag(), IMAGE_GALLERY_SAVE_ERROR, e);
       } catch (FileNotFoundException e) {
         Logger.error(getLogTag(), IMAGE_GALLERY_SAVE_ERROR, e);
       }
