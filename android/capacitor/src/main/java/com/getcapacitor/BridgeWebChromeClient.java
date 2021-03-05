@@ -304,7 +304,10 @@ public class BridgeWebChromeClient extends WebChromeClient {
     }
     if (fileChooserParams.getAcceptTypes().length > 1) {
       String[] validTypes = getValidTypes(fileChooserParams.getAcceptTypes());
-      intent.putExtra(Intent.EXTRA_MIME_TYPES, validTypes);
+      String validTypesStr = Arrays.stream(validTypes).collect(Collectors.joining());
+      intent.setType(validTypesStr);
+    } else {
+      intent.setType(DEFAULT_MIME_TYPE);
     }
     try {
       bridge.cordovaInterface.startActivityForResult(new CordovaPlugin() {
