@@ -118,7 +118,7 @@ public class Device extends Plugin {
   }
 
   private String getUuid() {
-    return Settings.Secure.getString(this.bridge.getContext().getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+    return "";
   }
 
   private float getBatteryLevel() {
