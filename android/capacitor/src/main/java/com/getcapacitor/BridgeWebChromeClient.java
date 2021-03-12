@@ -26,7 +26,6 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Custom WebChromeClient handler, required for showing dialogs, confirms, etc. in our
@@ -305,8 +304,8 @@ public class BridgeWebChromeClient extends WebChromeClient {
     }
     if (fileChooserParams.getAcceptTypes().length > 1) {
       String[] validTypes = getValidTypes(fileChooserParams.getAcceptTypes());
-      String validTypesStr = Arrays.stream(validTypes).collect(Collectors.joining());
-      intent.setType(validTypesStr);
+      intent.setType("*/*");
+      intent.putExtra(Intent.EXTRA_MIME_TYPES, validTypes);
     }
     try {
       bridge.cordovaInterface.startActivityForResult(new CordovaPlugin() {
