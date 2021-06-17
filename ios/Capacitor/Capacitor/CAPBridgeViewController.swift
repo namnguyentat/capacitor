@@ -564,10 +564,6 @@ open class CAPBridgeViewController: UIViewController, CAPBridgeDelegate, WKScrip
     }
   }
 
-  override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-    return UIApplication.shared.statusBarOrientation
-  }
-
   override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
     var ret = 0
     if self.supportedOrientations.contains(UIInterfaceOrientation.portrait.rawValue) {

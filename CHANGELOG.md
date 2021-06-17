@@ -1,3 +1,31 @@
+## [2.4.7](https://github.com/ionic-team/capacitor/compare/2.4.6...2.4.7) (2021-03-03)
+
+
+### Bug Fixes
+
+* fix(android): live reload not working when using adb reverse (#4141) ([9d7bf79](https://github.com/ionic-team/capacitor/commit/9d7bf79)), closes [#4141](https://github.com/ionic-team/capacitor/issues/4141)
+* fix(android): Reject on FS permission prompt cancelation (#4185) ([d6991cb](https://github.com/ionic-team/capacitor/commit/d6991cb)), closes [#4185](https://github.com/ionic-team/capacitor/issues/4185)
+
+
+
+## [2.4.6](https://github.com/ionic-team/capacitor/compare/2.4.5...2.4.6) (2021-01-13)
+
+
+### Bug Fixes
+
+* fix(ios): correctly initialize cordova plugins with webViewEngine (#4039) ([273fab5](https://github.com/ionic-team/capacitor/commit/273fab5)), closes [#4039](https://github.com/ionic-team/capacitor/issues/4039)
+
+
+
+## [2.4.5](https://github.com/ionic-team/capacitor/compare/2.4.4...2.4.5) (2020-12-14)
+
+
+### Bug Fixes
+
+* fix(ios): avoid crash on portrait apps after taking a photo (#3926) ([f182868](https://github.com/ionic-team/capacitor/commit/f182868)), closes [#3926](https://github.com/ionic-team/capacitor/issues/3926)
+
+
+
 ## [2.4.4](https://github.com/ionic-team/capacitor/compare/2.4.3...2.4.4) (2020-12-01)
 
 
